@@ -1,0 +1,46 @@
+interface Document {
+    public String preview();
+    public void save(String newContent);
+}
+
+class WordDoc implements Document {
+    String content;
+    public WordDoc (String content) {
+        this.content = content;
+    }
+    
+    public String preview () {
+        return this.content;
+    }
+    
+    public void save (String newContent) {
+        this.content = newContent;
+    }
+}
+
+class PdfDoc implements Document {
+    String content;
+    public PdfDoc (String content) {
+        this.content = content;
+    }
+    
+    public String preview () {
+        return this.content;
+    }
+    
+    public void save (String newContent) {
+        this.content = newContent;
+    }
+}
+
+public class Example {
+    
+    public static void main(String[] args) {
+        Document a = new WordDoc("wordExample");
+        Document b = new PdfDoc("pdfExample");
+        System.out.println(a.preview());
+        a.save("wordExample2");
+        System.out.println(a.preview());
+        System.out.println(b.preview());
+    }
+}

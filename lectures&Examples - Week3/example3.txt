@@ -1,0 +1,33 @@
+class Rectangle {
+        
+    double height;
+    double width; 
+    
+    public Rectangle (double height, double width) {
+        this.height = height;
+        this.width = width;
+    }
+    
+    public double area () {
+        return this.height * this.width;
+    }
+}
+
+class Square extends Rectangle {
+    
+    public Square (double height, double width) {
+        super(height, width);
+    }
+    
+    public double area () {
+        return (this.height * this.height);
+    }
+    
+}
+
+public class Example {
+    public static void main(String[] args) {
+        Rectangle a = new Rectangle(2, 4);
+        System.out.println(a.area());
+    }
+}

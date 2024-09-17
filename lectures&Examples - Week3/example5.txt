@@ -1,0 +1,42 @@
+import java.util.List;
+import java.util.ArrayList;
+
+class Square {
+    double height;
+    public Square (double height) {
+        this.height = height;
+    }
+    
+    public double area () {
+        return (this.height * this.height);
+    }
+}
+
+class AreaCalculator {
+    List<Square> figures;
+    public AreaCalculator (List<Square> figures) {
+        this.figures = figures;
+    }
+    
+    public void calculateAreas () {
+        double total = 0;
+        for (Square element : this.figures) {
+            total += element.area();
+        }
+        System.out.println(total);
+    }
+}
+
+
+public class Example {
+    
+    public static void main(String[] args) {
+        Square a = new Square(2);
+        Square b = new Square(3);
+        List<Square> myList = new ArrayList<Square>();
+        myList.add(a);
+        myList.add(b);
+        AreaCalculator calculator = new AreaCalculator(myList);
+        calculator.calculateAreas();
+    }
+}
